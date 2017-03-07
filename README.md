@@ -42,6 +42,7 @@ Your app must:
 * **Include wireframes** that you designed during the planning process
 * Have **semantically clean HTML and CSS**
 * **Be deployed online** and accessible to the public
+* **Use at least one NPM pacakge** that we have not talked about in class
 
 ---
 
