@@ -1,0 +1,24 @@
+{
+  "name": "turtle-project-2",
+  "version": "1.0.0",
+  "description": "My project is a beer wish list pulling from https://api.brewerydb.com to grab beers and breweries to add to your wishlist of beers and breweries you want to try. You can add, delete, and edit beers/breweries on your wishlist. The user would be able to login and see all this wishlist.",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://git.generalassemb.ly/amandajmunch/turtle-project-2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "mustache": "^2.3.0",
+    "mustache-express": "^1.2.4",
+    "node-fetch": "^1.6.3",
+    "pg-promise": "^5.6.3"
+  }
+}

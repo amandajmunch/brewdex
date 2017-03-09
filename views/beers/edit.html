@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Edit My Beer</title>
+   <link rel="stylesheet" href="/css/style.css">
+    <script type="text/javascript" src="/js/jquery.js"></script>
+    <script type="text/javascript" src="/js/script.js"></script>
+
+</head>
+<body>
+  <p>test edit</p>
+   <a href="/beers/{{beer_id}}">Back</a>
+    <h3> Edit {{ name }} </h3>
+
+    <form class="edit-beer-form">
+        <label>Name:</label>
+        <input class="beer-name-input" value='{{name}}' />
+        <br />
+
+        <label>Image:</label>
+        <input class="beer-image-input" value='{{ labels_medium }}' />
+        <br />
+        <img src='{{ beer_labels_medium }}' />
+        <br />
+
+        <label>ABV:</label>
+        <input class="beer-abv-input" value='{{abv}}' />
+        <br />
+
+         <label>IBU:</label>
+        <input class="beer-ibu-input" value='{{ibu}}' />
+        <br />
+
+         <label>Style Name:</label>
+        <input class="beer-style-input" value='{{style_name}}' />
+        <br />
+
+         <label>Brewery:</label>
+        <input class="beer-brewery-input" value='{{breweries_name}}' />
+        <br />
+
+        <input type="hidden" class="beer-id-input" value='{{ beer_id }}' />
+
+
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
+

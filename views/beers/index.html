@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Beer List</title>
+   <link rel="stylesheet" href="/css/style.css">
+    <script type="text/javascript" src="/js/jquery.js"></script>
+    <script type="text/javascript" src="/js/script.js"></script>
+
+</head>
+<body>
+  <p>test index</p>
+   <h3>Beers!</h3>
+    <a href="/beers/new">Create new Beer</a>
+    {{ #beers }}
+        <h5>{{ name }}</h5>
+        <p>ABV: {{ abv }}</p>
+        <p>IBU:{{ ibu }}</p>
+        <img src={{ labels_medium }} />
+        <p>Style:{{ style_name}} </p>
+        <p>Brewery:{{ breweries_name }}</p>
+        <a href="/beers/{{ id }}">View this Beer</a>
+    </a>
+    {{ /beers }}
+
+</body>
+</html>
+
+
