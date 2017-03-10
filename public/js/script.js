@@ -109,8 +109,9 @@ $('.edit-beer-form').on('submit', e => {
     editBrewery:editBrewery
   };
 console.log(newBeerData);
+
  $.ajax({
-    url: 'api/beers/' + editId,
+    url: '/api/beers/beers/' + editId,
     type: 'PUT',
     // this will be the req.body
     data: newBeerData,
@@ -131,11 +132,11 @@ console.log(newBeerData);
         id = $('.beer-id').attr('data-id')
         if (confirm('Are you sure you want to delete this beer?')) {
             $.ajax({
-                url: '/beers/' + id,
+                url: '/api/beers/beers/' + id ,
                   type: 'DELETE'
                 , success: function (data) {
                   console.log(data);
-                    window.location.replace('/beers');
+                    window.location.replace('/beers/');
                 }
                 , error: function (error) {
                     console.log('error! ', error);

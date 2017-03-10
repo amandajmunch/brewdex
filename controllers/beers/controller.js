@@ -55,15 +55,16 @@ controller.update = (req, res) => {
 //     .catch(err => console.log('ERROR:', err));
 
 // };
-// controller.destroy = (req,res) => {
-//   const id = req.params.id;
-//   Pokemon
-//     .destroy(id)
-//     .then(data => {
-//       res.json(data);
-//     })
-//     .catch(err => console.log('ERROR:', err));
-// };
+controller.delete = (req,res) => {
+  const id = req.params.id;
+  Beers
+    .delete(id)
+    .then(data => {
+      res.json(data);
+    })
+    .catch(err => console.log('ERROR:', err));
+};
+
 
 
 module.exports = controller;
