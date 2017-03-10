@@ -28,7 +28,7 @@ Beers.create = (name,abv,labels_medium,style_name,breweries_name) => {
 
 Beers.update = (id, name,abv, labels_medium,style_name,breweries_name) => {
   return db.one(
-    'UPDATE pokemon SET name = $1, abv = $2, labels_medium = $3, style_name = $4, breweries_name = $5 WHERE id = $6 returning id',
+    'UPDATE beers SET name = $1, abv = $2, labels_medium = $3, style_name = $4, breweries_name = $5 WHERE id = $6 returning id',
     [name,abv,labels_medium,style_name,breweries_name,id]
   );
 };

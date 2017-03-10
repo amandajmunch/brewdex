@@ -95,30 +95,32 @@ $('.edit-beer-form').on('submit', e => {
   // prevents page from reloading when submitting the form
   e.preventDefault();
   // .val grabs the value out of the element
-  const editName = $('.beer-name-input').val(),
-        editAbv = $('.beer-abv-input').val(),
-        editStyleName = $('.beer-style-input').val(),
-        editId = $('.beer-id-input').val(),
-        editBrewery = $('.beer-brewery-input').val();
+  const name = $('.beer-name-input').val(),
+        abv = $('.beer-abv-input').val(),
+        labels_medium = $('.beer-image-input').val(),
+        style_name = $('.beer-style-input').val(),
+        id = $('.beer-id-input').val(),
+        breweries_name = $('.beer-brewery-input').val();
 
    const newBeerData = {
-    editName:editName,
-    editAbv:editAbv,
-    editId:editId,
-    editStyleName:editStyleName,
-    editBrewery:editBrewery
+    name:name,
+    abv:abv,
+    labels_medium:labels_medium,
+    id:id,
+    style_name:style_name,
+    breweries_name:breweries_name
   };
 console.log(newBeerData);
 
  $.ajax({
-    url: '/api/beers/beers/' + editId,
+    url: '/api/beers/beers/' + id,
     type: 'PUT',
     // this will be the req.body
     data: newBeerData,
     success: response =>{
       console.log(response);
       // will send us to the pokemon id page
-      window.location.replace('/beers/' + response.editId);
+      window.location.replace('/beers/' + response.id);
     }, error: msg => {
       console.log(msg);
     }

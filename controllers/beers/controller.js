@@ -45,16 +45,7 @@ controller.update = (req, res) => {
 };
 
 
-// controller.edit = (req, res) => {
-//   const id = req.params.id;
-//   Pokemon
-//     .findById(id)
-//     .then((data) => {
-//       res.render('pokemon/edit', data);
-//     })
-//     .catch(err => console.log('ERROR:', err));
 
-// };
 controller.delete = (req,res) => {
   const id = req.params.id;
   Beers

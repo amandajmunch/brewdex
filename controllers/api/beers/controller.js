@@ -47,13 +47,14 @@ controller.create = (req, res) => {
 
 controller.update = (req, res) => {
     const id = req.params.id,
+          name = req.body.name,
          abv = req.body.abv,
         labels_medium = req.body.labels_medium,
         style_name = req.body.style_name,
         breweries_name = req.body.breweries_name;
-
+      console.log(req.body);
     Beers
-        .update(name, abv, labels_medium, style_name, breweries_name)
+        .update(id, name, abv, labels_medium, style_name, breweries_name)
         .then(data => res.json(data))
         .catch(err => console.log('ERROR', err));
 
@@ -69,15 +70,6 @@ controller.show = (req, res) => {
         })
         .catch(err => console.log('ERROR:', err));
 };
-
-// controller.new = (req, res) => {
-//     Beers
-//         .create()
-//         .then(data => {
-//             res.render('beers/new', { beers: data });
-//         })
-//         .catch(err => console.log('ERROR:', err));
-// };
 
 controller.delete = (req,res) => {
   const id = req.params.id;
