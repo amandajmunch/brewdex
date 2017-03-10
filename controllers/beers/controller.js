@@ -34,10 +34,10 @@ controller.new = (req, res) => {
   res.render('beers/new');
 };
 
-controller.edit = (req, res) => {
+controller.update = (req, res) => {
     const id = req.params.id;
     Beers
-        .update(id)
+        .findById(id)
         .then(data => {
             res.render('beers/edit', data);
         })
@@ -45,6 +45,16 @@ controller.edit = (req, res) => {
 };
 
 
+// controller.edit = (req, res) => {
+//   const id = req.params.id;
+//   Pokemon
+//     .findById(id)
+//     .then((data) => {
+//       res.render('pokemon/edit', data);
+//     })
+//     .catch(err => console.log('ERROR:', err));
+
+// };
 // controller.destroy = (req,res) => {
 //   const id = req.params.id;
 //   Pokemon

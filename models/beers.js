@@ -19,17 +19,17 @@ Beers.findById = (id) => {
   );
 };
 
-Beers.create = (name,abv,ibu,labels_medium,style_name,breweries_name) => {
+Beers.create = (name,abv,labels_medium,style_name,breweries_name) => {
   return db.one(
-    'INSERT INTO beers(name,abv,ibu,labels_medium,style_name,breweries_name) VALUES ($1, $2, $3, $4, $5, $6) returning id',
-    [name,abv,ibu,labels_medium,style_name,breweries_name]
+    'INSERT INTO beers(name,abv,labels_medium,style_name,breweries_name) VALUES ($1, $2, $3, $4, $5) returning id',
+    [name,abv,labels_medium,style_name,breweries_name]
   );
 };
 
-Beers.update = (id, name,abv,ibu,labels_medium,style_name,breweries_name) => {
+Beers.update = (id, name,abv, labels_medium,style_name,breweries_name) => {
   return db.one(
-    'UPDATE pokemon SET name = $1, abv = $2, ibu = $3, labels_medium = $4, style_name = $5, breweries_name = $6 WHERE id = $7 returning id',
-    [name,abv,ibu,labels_medium,style_name,breweries_name,id]
+    'UPDATE pokemon SET name = $1, abv = $2, labels_medium = $3, style_name = $4, breweries_name = $5 WHERE id = $6 returning id',
+    [name,abv,labels_medium,style_name,breweries_name,id]
   );
 };
 

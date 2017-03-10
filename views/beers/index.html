@@ -9,20 +9,22 @@
 
 </head>
 <body>
-  <p>test index</p>
-   <h3>Beers!</h3>
+  <div class="index">
+   <h1 class = index>Beer List!</h1>
     <a href="/beers/new">Create new Beer</a>
     {{ #beers }}
-        <h5>{{ name }}</h5>
+  <!--       <h3>{{ name }}</h3>
         <p>ABV: {{ abv }}</p>
-        <p>IBU:{{ ibu }}</p>
         <img src={{ labels_medium }} />
         <p>Style:{{ style_name}} </p>
         <p>Brewery:{{ breweries_name }}</p>
-        <a href="/beers/{{ id }}">View this Beer</a>
-    </a>
-    {{ /beers }}
+        <a href="/beers/{{ id }}">View this Beer</a> -->
+      <ul>
+        <li>{{ name }} by {{ breweries_name }}   <a href="/beers/{{ id }}">View this Beer</a> </li>
+      </ul>
 
+    {{ /beers }}
+  </div>
 </body>
 </html>
 

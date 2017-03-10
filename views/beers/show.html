@@ -8,21 +8,24 @@
     <script type="text/javascript" src="/js/script.js"></script>
 
 </head>
-<body>
+<body class='beer-id' data-id='{{id}}'>
+  <div class="show">
   <!-- <p>test show</p> -->
+
   <a href="/beers/">Back to your Beer List</a>
   <!-- <hr /> -->
 <br>
     <img src={{ labels_medium }} />
-    <h3>{{ name } </h3>
+    <h3>{{ name }}</h3>
     <p>{{ abv }}</p>
-    <p>{{ ibu }} </p>
     <p>{{ style_name }}</p>
     <p>{{ breweries_name }}</p>
 
     <!-- <hr /> -->
 
-    <a href="/beers/{{ beer_id }}/edit">Edit this Beer</a>
+    <a href="/beers/{{ id }}/edit">Edit this Beer</a>
+    <button class="delete-beer">Delete this Beer</button>
+    </div>
 </body>
 </html>
 

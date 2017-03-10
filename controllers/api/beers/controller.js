@@ -27,35 +27,33 @@ controller.fetchBeer = (req, res) => {
           res.json(data)
           })
         .catch(err => { console.log(err) })
-}
+};
 
 
 
 controller.create = (req, res) => {
     const name = req.body.name,
         abv = req.body.abv,
-        ibu = req.body.ibu,
         labels_medium = req.body.labels_medium,
         style_name = req.body.style_name,
         breweries_name = req.body.breweries_name,
         beer_id = req.body.beer_id;
     Beers
-        .create(name, abv, ibu, labels_medium, style_name, breweries_name, beer_id)
+        .create(name, abv, labels_medium, style_name, breweries_name, beer_id)
         .then(data => res.json(data))
         .catch(err => console.log('ERROR:', err));
 };
 
+
 controller.update = (req, res) => {
     const id = req.params.id,
          abv = req.body.abv,
-        ibu = req.body.ibu,
         labels_medium = req.body.labels_medium,
         style_name = req.body.style_name,
-        breweries_name = req.body.breweries_name,
-        beer_id = req.body.beer_id;
+        breweries_name = req.body.breweries_name;
 
     Beers
-        .update(name, abv, ibu, labels_medium, style_name, breweries_name, beer_id)
+        .update(name, abv, labels_medium, style_name, breweries_name)
         .then(data => res.json(data))
         .catch(err => console.log('ERROR', err));
 
@@ -81,10 +79,10 @@ controller.show = (req, res) => {
 //         .catch(err => console.log('ERROR:', err));
 // };
 
-controller.destroy = (req,res) => {
+controller.delete = (req,res) => {
   const id = req.params.id;
-  Pokemon
-    .destroy(id)
+  Beers
+    .delete(id)
     .then(data => {
       res.json(data);
     })

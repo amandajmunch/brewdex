@@ -2,6 +2,7 @@ const express = require('express');
 const mustacheExpress = require('mustache-express');
 const bodyParser = require('body-parser');
 const pgp = require('pg-promise')();
+const normalize = require('normalize');
 
 const app = express();
 const PORT = process.env.PORT || 8080;

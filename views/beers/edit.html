@@ -9,17 +9,17 @@
 
 </head>
 <body>
-  <p>test edit</p>
+  <div class="edit">
    <a href="/beers/{{beer_id}}">Back</a>
     <h3> Edit {{ name }} </h3>
-
+      <img src={{ labels_medium }}>
     <form class="edit-beer-form">
         <label>Name:</label>
         <input class="beer-name-input" value='{{name}}' />
         <br />
 
         <label>Image:</label>
-        <input class="beer-image-input" value='{{ labels_medium }}' />
+        <textarea class="beer-image-input">{{ labels_medium }}</textarea>
         <br />
         <img src='{{ beer_labels_medium }}' />
         <br />
@@ -28,23 +28,21 @@
         <input class="beer-abv-input" value='{{abv}}' />
         <br />
 
-         <label>IBU:</label>
-        <input class="beer-ibu-input" value='{{ibu}}' />
-        <br />
 
          <label>Style Name:</label>
-        <input class="beer-style-input" value='{{style_name}}' />
+        <textarea class="beer-style-input">{{style_name}}</textarea>
         <br />
 
          <label>Brewery:</label>
-        <input class="beer-brewery-input" value='{{breweries_name}}' />
+        <textarea class="beer-brewery-input">{{breweries_name}}</textarea>
         <br />
 
-        <input type="hidden" class="beer-id-input" value='{{ beer_id }}' />
+        <input type="hidden" class="beer-id-input" value='{{ id }}' />
 
 
         <button type="submit">Submit</button>
     </form>
+    </div>
 </body>
 </html>
 
