@@ -6,12 +6,19 @@
    <link rel="stylesheet" href="/css/style.css">
     <script type="text/javascript" src="/js/jquery.js"></script>
     <script type="text/javascript" src="/js/script.js"></script>
-
+    <link href="https://fonts.googleapis.com/css?family=Hind" rel="stylesheet">
 </head>
 <body>
   <div class="edit">
-   <a href="/beers/{{id}}">Back</a>
-    <h3> Edit {{ name }} </h3>
+   <div class="nav">
+    <ul>
+      <!-- <li>Name</li> -->
+      <li><a href="/beers/">My Beers</a></li>
+      <li>Logout</li>
+    </ul>
+  </div>
+      <!-- <h1>Brewdex</h1> -->
+    <img src="../../images/logo3.png" id = "logo">
       <img src={{ labels_medium }}>
     <form class="edit-beer-form">
         <label>Name:</label>
@@ -40,8 +47,10 @@
         <input type="hidden" class="beer-id-input" value='{{ id }}' />
 
 
-        <button type="submit">Submit</button>
+        <button type="submit" class = "submit">Submit</button>
     </form>
+    <button onclick="window.location.href='/beers/{{ id }}'">Back to {{ name }}</button>
+    <!-- <a href="/beers/{{id}}">Back to {{ name }}</a> -->
     </div>
 </body>
 </html>

@@ -1,14 +1,101 @@
 .index{
 display: flex;
 flex-direction: column;
-align-content: center;
-align-items: center;
+margin-bottom: 4vh;
 }
+
+.index h1{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#view{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-self: center;
+  margin-left: 22vh;
+}
+
+.list{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  margin-top: 2vh;
+  /*padding-top: 4vh;*/
+  /*border:2px solid red;*/
+}
+
+
+.list ul {
+  display: flex;
+  flex-direction: row;
+  margin-left: 30vh;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  list-style-type: square;
+
+}
+
+.list li {
+  display: flex;
+  flex-direction: row;
+  /*border: 2px solid red;*/
+  width: 80vh;
+  text-align: center;
+  list-style-type: square;
+}
+
+.list button {
+  justify-content: center;
+  text-align: right;
+}
+
+
+button {
+  background-color: #FEFEFA;
+  color: black;
+  border-color: black;
+  border-radius: 4px;
+}
+
+button:hover{
+  background-color: black;
+  color: #FEFEFA;
+}
+.newBeer {
+ width: 17vh;
+ align-self: center;
+
+}
+
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+#logo {
+  width: 70vh;
+  height: 20vh;
+  /*position: fixed;*/
+}
+
+.index #logo{
+  display: flex;
+  justify-content: center;
+  align-self: center;
+}
+
 
 .show{
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-bottom: 10vh;
 }
 
 .search{
@@ -22,6 +109,7 @@ align-items: center;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-bottom: 10vh;
 }
 
 .edit{
@@ -30,4 +118,48 @@ align-items: center;
   align-items: center;
 }
 
+.nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 10px;
+  /*background-color: #F7930C;*/
+  border-top: 2px dotted black;
+  border-bottom: 2px dotted black;
+  margin-bottom: 2vh;
+  width: 100%;
+  height: 6vh;
+  /*position: fixed;*/
+}
 
+.nav ul {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+}
+
+.nav li {
+   padding-right: 20px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: black;
+}
+
+ .submitBeer {
+  align-self: center;
+}
+
+body {
+  background-color: #FEFEFA;
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  font-family: 'Hind', sans-serif;
+}
+
+.submit {
+  margin-left: 13vh;
+}

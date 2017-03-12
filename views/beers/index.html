@@ -6,24 +6,32 @@
    <link rel="stylesheet" href="/css/style.css">
     <script type="text/javascript" src="/js/jquery.js"></script>
     <script type="text/javascript" src="/js/script.js"></script>
-
+    <link href="https://fonts.googleapis.com/css?family=Hind" rel="stylesheet">
 </head>
 <body>
   <div class="index">
-   <h1 class = index>Beer List!</h1>
-    <a href="/beers/new">Create new Beer</a>
+  <div class="nav">
+    <ul>
+      <!-- <li>Name</li> -->
+      <li><a href="/beers/">My Beers</a></li>
+      <li>Logout</li>
+    </ul>
+  </div>
+   <!-- <h1 class = index>Brewdex</h1> -->
+   <img src="../../images/logo3.png" id = "logo">
     {{ #beers }}
-  <!--       <h3>{{ name }}</h3>
-        <p>ABV: {{ abv }}</p>
-        <img src={{ labels_medium }} />
-        <p>Style:{{ style_name}} </p>
-        <p>Brewery:{{ breweries_name }}</p>
-        <a href="/beers/{{ id }}">View this Beer</a> -->
+      <div class="list">
       <ul>
-        <li>{{ name }} by {{ breweries_name }}   <a href="/beers/{{ id }}">View this Beer</a> </li>
+        <li>{{ name }} by {{ breweries_name }}
+          <div id="view">
+            <button onclick="window.location.href='/beers/{{ id }}'" id="view">View</button>
+          </div>
+        </li>
       </ul>
-
+      </div>
     {{ /beers }}
+    <br>
+    <button onclick="window.location.href='/beers/new'" class="newBeer">Create New Beer</button>
   </div>
 </body>
 </html>

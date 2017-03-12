@@ -10,7 +10,7 @@ $('.new-beer-form').on('submit', (e) =>{
     url: `/api/beers/fetchBeer/${beerName}`,
     method: 'GET',
     success: (response) =>{
-      console.log(response);
+      // console.log(response);
       // // console.log(response);
       response.forEach((response) =>{
         handleResponse(response);
@@ -38,9 +38,10 @@ $('.new-beer-form').on('submit', (e) =>{
   const appendBeer = function(newName, imagePath, newAbv, newStyle, newBrewery){
     $('.beer-div').remove();
     const newBeerDiv = $('<div class="beer-div">');
-    const header = $('<h5>'+ newName + '</h5>');
+    const header = $('<h1>'+ newName + '</h1>');
     const picture = $('<img>');
     picture.attr('src', imagePath);
+    picture.addClass('label');
     const bAbv = $('<p class = "abv">' + newAbv + '</p>');
     const bStyle = $('<p class = "style">' + newStyle + '</p>');
     const bBrewery = $('<p class = "brewery">' + newBrewery + '</p>');
@@ -50,11 +51,11 @@ $('.new-beer-form').on('submit', (e) =>{
     newBeerDiv.append(bStyle);
     newBeerDiv.append(bBrewery);
     const $addButton = $('<button class="add-button"> Add New Beer </button>').click(() => {
-    console.log('hit');
+    // console.log('hit');
 
   // select stuff
-      let name = $('h5').text(),
-          labels_medium = $('img').attr('src'),
+      let name = $('h1').text(),
+          labels_medium = $('img.label').attr('src'),
           abv = parseInt($('p.abv').text()),
           style_name = $('p.style').text(),
           breweries_name = $('p.brewery').text();
@@ -76,8 +77,8 @@ $('.new-beer-form').on('submit', (e) =>{
         method: 'POST',
         data: addBeer,
         success: (response) =>{
-          console.log('bitches')
-          console.log(response);
+          // console.log('bitches')
+          // console.log(response);
           window.location.replace('/beers');
         }, error: (err) =>{
           console.log(err);
@@ -118,7 +119,7 @@ console.log(newBeerData);
     // this will be the req.body
     data: newBeerData,
     success: response =>{
-      console.log(response);
+      // console.log(response);
       // will send us to the pokemon id page
       window.location.replace('/beers/' + response.id);
     }, error: msg => {
@@ -137,7 +138,7 @@ console.log(newBeerData);
                 url: '/api/beers/beers/' + id ,
                   type: 'DELETE'
                 , success: function (data) {
-                  console.log(data);
+                  // console.log(data);
                     window.location.replace('/beers/');
                 }
                 , error: function (error) {

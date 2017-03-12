@@ -1,9 +1,28 @@
 const db = require('../db');
+const bcrypt = require('bcrypt');
 
-const Users = {};
+const User = {};
 
-Schools.findById = (id) => {
-    return db.one('SELECT * FROM users WHERE id = $1', [id]);
+User.create = (user) => {
+  const password = bcrypt.hashSync(user.password, 10);
+
+  return db.oneOrNone(`
+    INSERT INTO users
+    (name, password)
+    VALUES
+    ($1, $2)
+    RETURNING *;`,
+    [ user.name, password ]
+  );
 };
 
-module.exports = Users;
+User.findByName = (name) => {
+  return db.oneOrNone(`
+    SELECT *
+    FROM users
+    WHERE name = $1;`,
+    [name]
+  );
+};
+
+module.exports = User;

@@ -1,8 +1,6 @@
 const Beers = require('../../../models/beers');
 const controller = {};
 
-
-
 controller.index = (req, res) => {
     Beers
         .findAll()

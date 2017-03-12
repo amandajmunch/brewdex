@@ -6,9 +6,25 @@
    <link rel="stylesheet" href="/css/style.css">
   <script type="text/javascript" src="/js/jquery.js"></script>
   <script type="text/javascript" src="/js/script.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Hind" rel="stylesheet">
 </head>
 <body>
-  <p>home page</p>
-  <a href="/beers/">Enter here</a>
+  <div class="home">
+    <!-- <h1>Brewdex</h1> -->
+       <img src="../../images/logo3.png" id = "logo">
+    <button onclick="window.location.href='/beers/'">Enter Here</button>
+     <form action="/beers/" method="POST">
+        <label for="email">Name</label><br>
+        <input id="email" type="text" name="user[name]" placeholder="john.doe"><br>
+        <label for="password">Password</label><br>
+        <input id="password" type="password" name="user[password]" placeholder="P4ssw0rd1234"><br>
+        <button type="submit" value="Login">Login</button>
+      </form>
+      <!-- <div>
+        <a href="/new">Sign Up</a>
+      </div> -->
+    <!-- <a href="/beers/">Enter here</a> -->
+    <!-- <img src="http://imgur.com/a/NPYE0?third_party=1#_=_"> -->
+  </div>
 </body>
 </html>
