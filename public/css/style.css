@@ -11,11 +11,12 @@ margin-bottom: 4vh;
 }
 
 #view{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-self: center;
-  margin-left: 22vh;
+/*  display: flex;
+  flex-direction: row;*/
+  /*justify-content: center;*/
+  align-self: flex-end;
+  margin-left: auto;
+  /*margin-left: 20vh;*/
 }
 
 .list{
@@ -34,7 +35,7 @@ margin-bottom: 4vh;
   margin-left: 30vh;
   flex-wrap: wrap;
   justify-content: space-between;
-  list-style-type: square;
+  /*list-style-type: square;*/
 
 }
 
@@ -42,7 +43,7 @@ margin-bottom: 4vh;
   display: flex;
   flex-direction: row;
   /*border: 2px solid red;*/
-  width: 80vh;
+  width: 90vh;
   text-align: center;
   list-style-type: square;
 }
@@ -61,8 +62,9 @@ button {
 }
 
 button:hover{
-  background-color: black;
-  color: #FEFEFA;
+  /*background-color: black;*/
+  /*color: #FEFEFA;*/
+  border-color:#CD8B00;
 }
 .newBeer {
  width: 17vh;
@@ -148,7 +150,12 @@ button:hover{
   color: black;
 }
 
- .submitBeer {
+
+.nav a:hover {
+  color: #885c00;
+}
+
+.submitBeer {
   align-self: center;
 }
 

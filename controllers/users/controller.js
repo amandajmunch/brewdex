@@ -1,64 +1,64 @@
-// const User = require('../models/users');
-// const router = require('express').Router();
-// const passport = require('passport');
-// const AuthService = require('../services/auth');
+const User = require('../../models/users');
+const router = require('express').Router();
+const passport = require('passport');
+const AuthService = require('../../services/authenticate');
 
-// router.post(
-//   '/',
-//   passport.authenticate(
-//     'local-signup',
-//     {
-//       failureRedirect: '/',
-//       successRedirect: '/beers/'
-//     }
-//   )
-// );
+router.post(
+  '/',
+  passport.authenticate(
+    'local-signup',
+    {
+      failureRedirect: '/users/signup',
+      successRedirect: '/beers/index'
+    }
+  )
+);
 
-// // // register new user
+// register new user
 
-// // router.get('/new', (req, res) => {
-// //   res.render('/');
-// // });
+router.get('/signup', (req, res) => {
+  res.render('users/signup');
+});
 
-// // user logout
+// user logout
 
-// router.get('/logout', (req, res) => {
-//   req.logout();
-//   res.redirect('/');
-// });
+router.get('/logout', (req, res) => {
+  req.logout();
+  res.redirect('/');
+});
 
-// // user login
+// user login
 
-// router.get('/', (req, res) => {
-//   res.render('/');
-// });
+router.get('/login', (req, res) => {
+  res.render('users/login');
+});
 
-// router.post('/login', passport.authenticate(
-//   'local-login',
-//   {
-//     failureRedirect: '/',
-//     successRedirect: '/beers/index'
-//   }
-// ));
+router.post('/login', passport.authenticate(
+  'local-login',
+  {
+    failureRedirect: '/users/login',
+    successRedirect: '/beers/index'
+  }
+));
 
 
-// // user profile
+// user profile
 
-// router.get(
-//   '/profile',
-//   AuthService.restrict,
-//   (req, res) => {
-//     User
-//       .findByName(req.user.name)
-//       .then((user) => {
-//   res.render(
-//     'beers/index',
-//     { user: user }
-//   );
-//       })
-//       .catch(err => console.log('ERROR:', err));
-//   }
-// );
+router.get(
+  '/beers',
+  AuthService.restrict,
+  (req, res) => {
+    User
+      .findByName(req.user.name)
+      .then((user) => {
+  res.render(
+    'beers/index',
+    { user: user }
+  );
+      })
+      .catch(err => console.log('ERROR:', err));
+  }
+);
 
-// module.exports = router;
+module.exports = router;
 
