@@ -69,6 +69,7 @@ $('.new-beer-form').on('submit', (e) =>{
         abv: abv,
         style_name : style_name,
         breweries_name : breweries_name,
+
       };
 
       console.log(addBeer);
@@ -77,7 +78,6 @@ $('.new-beer-form').on('submit', (e) =>{
         method: 'POST',
         data: addBeer,
         success: (response) =>{
-          // console.log('bitches')
           // console.log(response);
           window.location.replace('/beers');
         }, error: (err) =>{
@@ -147,76 +147,6 @@ console.log(newBeerData);
             });
         };
     });
-
-// $('body').on('click', '.add-button', () => {
-//         const beer = $('.beer-text').text();
-//         console.log('hit');
-//         $.ajax({
-//             url: '/',
-//             type: 'POST',
-//             data: {
-//                 text: beer
-//             },
-//             success: (res) => {
-//                 console.log(res);
-//                 window.location.replace('/beers/' + res.id);
-//             },
-//             error: (err) => {
-//                 console.log(err);
-//             }
-//         });
-//     });
-
-// addBeer = (data) =>{
-//   $('.beer-div').remove();
-//         const $beerDiv = $('<div class="beer-div">');
-//         const $beer = $('<p class="beer-text">');
-//         $beer.text(data);
-//         $beerDiv.append($beer);
-//         $('body').append($beerDiv);
-// };
-
-
-// $('body').on('click', '.add-button', () => {
-//   console.log('hit');
-
-//   // select stuff
-//   let name = $('h5').val(),
-//       id = $('body').attr('data-id'),
-//       image = $('img').val(),
-//       abv = $('p.abv').val(),
-//       ibu = $('p.ibu').val(),
-//       styleName = $('p.style').val(),
-//       breweryName = $('p.brewery').val();
-
-//   // get those values
-//   // put them in obj
-//   const addBeer = {
-//     id: id,
-//     name: name,
-//     image: image,
-//     abv: abv,
-//     ibu : ibu,
-//     styleName : styleName,
-//     breweryName : breweryName,
-//   };
-//   // select the data you need nd make obj
-//  $.ajax({
-//     url: `/api/beers/beers`,
-//     method: 'POST',
-//     data: JSON.stringify(addBeer),
-//     success: (response) =>{
-//       console.log('bitches')
-//       console.log(response);
-//       window.location.replace('/beers');
-//     }, error: (err) =>{
-//       console.log(err);
-//     }
-//   });
-//  });
-
-
-
 
 
 

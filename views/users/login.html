@@ -10,16 +10,17 @@
 </head>
 <body>
   <div class="login">
+  <img src="../../images/logo3.png" id = "logo">
      <h1>Login</h1>
       <form action="/users/login" method="POST">
         <label for="email">Email</label><br>
         <input id="email" type="text" name="user[name]" placeholder="john.doe@example.com"><br>
         <label for="password">Password</label><br>
         <input id="password" type="password" name="user[password]" placeholder="P4ssw0rd1234"><br>
-        <input type="submit" value="Login">
+        <input type="submit" value="Login" id="loginButton">
       </form>
       <div>
-        <a href="/users/signup">Sign Up</a>
+        <button onclick="window.location.href='/users/signup'" id ="loginSignup">Signup</button>
       </div>
   </div>
 </body>

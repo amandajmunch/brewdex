@@ -3,10 +3,12 @@ const Beers = require('../../models/beers');
 const controller = {};
 
 controller.index = (req, res) => {
+  user_id = req.user.id;
     Beers
-        .findAll()
+        .findAll(user_id)
         .then(data => {
             res.render('beers/index', { beers: data });
+            // console.log(user_id);
         })
         .catch(err => console.log('ERROR:', err));
 };

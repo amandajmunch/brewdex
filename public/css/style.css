@@ -2,7 +2,34 @@
 display: flex;
 flex-direction: column;
 margin-bottom: 4vh;
+font-size: 20px;
 }
+
+
+.login{
+   display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 10vh;
+}
+
+
+.signup{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 50vh;
+}
+
+.signupLogo{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 10vh;
+}
+
 
 .index h1{
   display: flex;
@@ -66,8 +93,27 @@ button:hover{
   /*color: #FEFEFA;*/
   border-color:#CD8B00;
 }
+
+#signupButton, #loginButton {
+  background-color: #FEFEFA;
+  color: black;
+  border-color: black;
+  border-radius: 4px;
+}
+
+#signupButton:hover, #loginButton:hover{
+  /*background-color: black;*/
+  /*color: #FEFEFA;*/
+  border-color:#CD8B00;
+}
+
+#loginButton{
+    margin-left: 6vh;
+
+}
+
 .newBeer {
- width: 17vh;
+ width: 16vh;
  align-self: center;
 
 }

@@ -37,7 +37,7 @@ router.post('/login', passport.authenticate(
   'local-login',
   {
     failureRedirect: '/users/login',
-    successRedirect: '/beers/index'
+    successRedirect: '/beers/'
   }
 ));
 
@@ -52,13 +52,26 @@ router.get(
       .findByName(req.user.name)
       .then((user) => {
   res.render(
-    'beers/index',
+    'beers/',
     { user: user }
   );
       })
       .catch(err => console.log('ERROR:', err));
   }
 );
+
+
+User.show = (req, res) => {
+    User.findBeersById(req.params.id)
+    .then(user => {
+        res.render("beers/", { users });
+    })
+    .catch((err) => {
+      res.status(400)
+      .send(err);
+    });
+}
+
 
 module.exports = router;
 

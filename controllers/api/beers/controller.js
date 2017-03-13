@@ -2,8 +2,10 @@ const Beers = require('../../../models/beers');
 const controller = {};
 
 controller.index = (req, res) => {
+    user_id = req.user.id;
+    // console.log(user_id);
     Beers
-        .findAll()
+        .findAll(user_id)
         .then(data => {
             res.render('beers/index', { beers: data });
         })
@@ -35,9 +37,9 @@ controller.create = (req, res) => {
         labels_medium = req.body.labels_medium,
         style_name = req.body.style_name,
         breweries_name = req.body.breweries_name,
-        beer_id = req.body.beer_id;
+        user_id = req.user.id;
     Beers
-        .create(name, abv, labels_medium, style_name, breweries_name, beer_id)
+        .create(name, abv, labels_medium, style_name, breweries_name, user_id)
         .then(data => res.json(data))
         .catch(err => console.log('ERROR:', err));
 };
