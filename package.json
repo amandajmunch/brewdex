@@ -3,8 +3,11 @@
   "version": "1.0.0",
   "description": "My project is a beer wish list pulling from https://api.brewerydb.com to grab beers and breweries to add to your wishlist of beers and breweries you want to try. You can add, delete, and edit beers/breweries on your wishlist. The user would be able to login and see all this wishlist.",
   "main": "app.js",
+    "engines": {
+    "node": "7.5.0"
+  },
   "scripts": {
-    "start": "nodemon app.js",
+    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
