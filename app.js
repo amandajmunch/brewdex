@@ -19,7 +19,7 @@ app.use(express.static(__dirname + '/public'));
 
 
 // body-parser setup
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 // Important: mount express middleware BEFORE passport middleware
@@ -34,7 +34,7 @@ app.use(passport.initialize());
 
 app.use(passport.session());
 
-app.use(bodyParser.urlencoded({ extended: true }));
+// app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(cookieParser());
 
