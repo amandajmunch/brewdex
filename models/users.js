@@ -3,6 +3,7 @@ const bcrypt = require('bcrypt');
 
 const User = {};
 
+// creates a new user
 User.create = (user) => {
   const password = bcrypt.hashSync(user.password, 10);
 
@@ -16,6 +17,7 @@ User.create = (user) => {
   );
 };
 
+// finds a user by their name
 User.findByName = (name) => {
   return db.oneOrNone(`
     SELECT *

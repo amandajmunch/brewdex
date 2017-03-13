@@ -35,6 +35,7 @@ $('.new-beer-form').on('submit', (e) =>{
     appendBeer(newName, imagePath, newAbv, newStyle, newBrewery);
   };
 
+  // appending the information from API fetch call to the page so we can see it
   const appendBeer = function(newName, imagePath, newAbv, newStyle, newBrewery){
     $('.beer-div').remove();
     const newBeerDiv = $('<div class="beer-div">');
@@ -53,7 +54,7 @@ $('.new-beer-form').on('submit', (e) =>{
     const $addButton = $('<button class="add-button"> Add New Beer </button>').click(() => {
     // console.log('hit');
 
-  // select stuff
+  // select the values on the page to add into our html views
       let name = $('h1').text(),
           labels_medium = $('img.label').attr('src'),
           abv = parseInt($('p.abv').text()),
@@ -62,7 +63,7 @@ $('.new-beer-form').on('submit', (e) =>{
 
 
       // get those values
-      // put them in obj
+      // put them in object
       const addBeer = {
         name: name,
         labels_medium: labels_medium,
@@ -71,7 +72,7 @@ $('.new-beer-form').on('submit', (e) =>{
         breweries_name : breweries_name,
 
       };
-
+      // adding the beer to the database
       console.log(addBeer);
      $.ajax({
         url: `/api/beers/beers/`,
@@ -85,7 +86,7 @@ $('.new-beer-form').on('submit', (e) =>{
         }
       });
  });
-
+    // appends the add button to the body when the information is pulled
     const bId = $()
     $(newBeerDiv).append($addButton);
     $('body').append(newBeerDiv);

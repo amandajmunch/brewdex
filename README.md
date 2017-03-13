@@ -17,9 +17,39 @@ all this wishlist.
 * Show beer page 
 
 ---
-### Foreseen challenges
+### Technologies Used
 
-* Logging user in
-* Having enough time to make it pretty looking
+* HTML
+* CSS
+* Javascript
+*  JQuery
+* Mustache, Passport, Session, Normalize, Session, Flash, CookieParser
+* BreweryDB API
+
+---
+### Approach Taken
+
+I began by wireframing my project visually and modeling my code from previous projects.
+I then made sure I could pull data from the API and add that to the database. Then, with 
+each step completed, I added login functionality. 
+
+---
+### Installation Instructions
+
+If the user does not have a login and password, they will be prompted to create an account. 
+Then, they will take their account information and login. They can add a new beer to their list
+and save it. They can even edit the beer information and delete that beer from the list. 
+There is a limited selection of beers in the database, so the user should choose popular
+beers. 
+
+---
+### Unsolved Problems
+
+* Using multiple models
+* Installing more NPM packages
+* Only have 1 API
+
+
+
 
 
