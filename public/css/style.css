@@ -111,8 +111,12 @@ button:hover{
 }
 
 #loginButton{
-    margin-left: 6vh;
+    margin-left: 6.5vh;
 
+}
+
+#signupButton{
+  margin-left: 5.5vh;
 }
 
 .newBeer {
