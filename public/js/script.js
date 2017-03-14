@@ -13,16 +13,25 @@ $('.new-beer-form').on('submit', (e) =>{
       // console.log(response);
       // // console.log(response);
       response.forEach((response) =>{
+        $('.error').remove();
         handleResponse(response);
       });
 
     }, error: (err) =>{
+      // alert("Could not find beer. Try another one.");
+      noBeer();
       console.log(err);
     }
   });
 });
 
-
+const noBeer = function () {
+  $('.error').remove();
+  $('.beer-div').remove();
+  const error = $('<p class = "error">'+ "Beer could not be found. Try again." + '</p>');
+  error.css('color', 'red');
+  $('.search').append(error);
+};
 
 //adding a new beer to a div when search is clicked
    const handleResponse = function(response){
@@ -38,6 +47,7 @@ $('.new-beer-form').on('submit', (e) =>{
   // appending the information from API fetch call to the page so we can see it
   const appendBeer = function(newName, imagePath, newAbv, newStyle, newBrewery){
     $('.beer-div').remove();
+    $('.error').remove();
     const newBeerDiv = $('<div class="beer-div">');
     const header = $('<h1>'+ newName + '</h1>');
     const picture = $('<img>');
