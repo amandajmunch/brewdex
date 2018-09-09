@@ -42,6 +42,10 @@ and save it. They can even edit the beer information and delete that beer from t
 There is a limited selection of beers in the database, so the user should choose popular
 beers. 
 
+Login credentials:
+
+username: Amanda
+password: password
 ---
 ### Unsolved Problems
 
