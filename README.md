@@ -45,6 +45,7 @@ beers.
 Login credentials:
 
 username: Amanda
+
 password: password
 
 ---
